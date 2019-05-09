@@ -4,14 +4,14 @@
 
 body {
     font-family: Calibri, Nunito;
-    scroll-behavior: smooth;
+    
     margin: 0;
     background-color: black;
     background-image: url(grafika/bgtest.jpg);
     background-repeat: repeat-y;
     background-size: 100%;
     color: white;
-    height: 20000px;
+    height: auto;
     width: 100%;
 }
 
@@ -63,18 +63,19 @@ body {
     margin-bottom: 30%;
 }
 
-projectContainer {
+#projectContainer {
     width: 100%;
-
+    position: relative;
 }
 
 .project {
-
+ clear: both;
     min-width: 30%;
     width: 51%;
     max-width: 51%;
     height: 200px;
     color: white;
+    margin-top: 10%;
     margin-bottom: 10%;
     display: flex;
 }
@@ -113,6 +114,16 @@ projectContainer {
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
 }
+#footer{
+    
+    position: absolute;
+    width: 100%;  position: relative;    
+    bottom: 0;
+}
+#footer img{
+    padding-top: 10%;
+}
+
 
 @-webkit-keyframes pulse {
     0% {
@@ -130,7 +141,6 @@ projectContainer {
         transform: scale3d(1, 1, 1);
     }
 }
-
 @keyframes pulse {
     0% {
         -webkit-transform: scale3d(1, 1, 1);
@@ -147,7 +157,6 @@ projectContainer {
         transform: scale3d(1, 1, 1);
     }
 }
-
 @-webkit-keyframes flip-bck {
   0% {
     -webkit-transform: rotateX(0);
