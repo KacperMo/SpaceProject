@@ -1,66 +1,191 @@
-*{
-    
-}
-body{
+@import url(http://fonts.googleapis.com/css?family=Nunito);
+
+* {}
+
+body {
+    font-family: Calibri, Nunito;
     scroll-behavior: smooth;
     margin: 0;
     background-color: black;
-    background-image: url(grafika/bg.jpg);
+    background-image: url(grafika/bgtest.jpg);
     background-repeat: repeat-y;
-    background-size: 200%;
+    background-size: 100%;
     color: white;
     height: 20000px;
     width: 100%;
 }
-@-webkit-keyframes mymove {
-    50% {-webkit-transform-origin: 0 50% 0 0;}
+
+#spaceman {
+    position: fixed;
+    height: 1%;
+    left: 45%;
+    top: 10%;
+
+    z-index: -1;
 }
-#header{
+
+.moveUp {
+    webkit-animation: flip-fwd 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) reverse both;
+	        animation: flip-fwd 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) reverse both;
+}
+
+.moveDown {
+    
+    -webkit-animation: flip-bck 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+	        animation: flip-bck 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+
+#header {
     width: 100%;
     min-height: 100px;
     height: auto;
-    
+
 }
-#headerBG{
+
+#headerBG {
     width: 100%;
     transform: rotate(0deg);
     z-index: -1;
     position: absolute;
     /*-webkit-animation: mymove 2s infinite;*/
-    top: 50%;
+
     transform: translate(0%)
 }
-#erth{
+
+#erth {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
     z-index: 1;
     top: 0;
+    width: 50%;
     height: auto;
-    margin-bottom: 20%;
+    margin-bottom: 30%;
 }
-.project{
-    clear: both;
-    border: solid 1px yellow;
+
+projectContainer {
     width: 100%;
+
+}
+
+.project {
+
+    min-width: 30%;
+    width: 51%;
+    max-width: 51%;
     height: 200px;
     color: white;
-    margin-bottom: 10px;
-}
-.project:nth-child(even){
-    border: solid 1px blue;
-    width: 100%;
+    margin-bottom: 10%;
+    display: flex;
 }
 
+.project:nth-child(even) {
+    float: right;
 
-.planets{
+}
+
+.project:nth-child(odd) {
     float: left;
+
 }
-.planets:nth-child(odd) {
-    
-    float: right !important;
+
+
+.planets {
+    width: 20%;
 }
-.aboutProject{
+
+.planetsR {
+    float: right;
+}
+
+.aboutProject {
+    float: right;
     margin-left: 50px;
-    float: left;
+    width: 80%;
+
 }
+
+.pulse {
+    -webkit-animation-name: pulse;
+    animation-name: pulse;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@-webkit-keyframes pulse {
+    0% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+
+    50% {
+        -webkit-transform: scale3d(1.05, 1.05, 1.05);
+        transform: scale3d(1.05, 1.05, 1.05);
+    }
+
+    100% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+
+    50% {
+        -webkit-transform: scale3d(1.05, 1.05, 1.05);
+        transform: scale3d(1.05, 1.05, 1.05);
+    }
+
+    100% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+@-webkit-keyframes flip-bck {
+  0% {
+    -webkit-transform: rotateX(0);
+            transform: rotateX(0);
+  }
+  100% {
+    -webkit-transform: rotateX(180deg);
+            transform: rotateX(180deg);
+  }
+}
+@keyframes flip-bck {
+  0% {
+    -webkit-transform: rotateX(0);
+            transform: rotateX(0);
+  }
+  100% {
+    -webkit-transform: rotateX(180deg);
+            transform: rotateX(180deg);
+  }
+}
+@-webkit-keyframes flip-fwd {
+  0% {
+    -webkit-transform: rotateX(0);
+            transform: rotateX(0);
+  }
+  100% {
+    -webkit-transform: rotateX(180deg);
+            transform: rotateX(180deg);
+  }
+}
+@keyframes flip-fwd {
+  0% {
+    -webkit-transform: rotateX(0);
+            transform: rotateX(0);
+  }
+  100% {
+    -webkit-transform: rotateX(180deg);
+            transform: rotateX(180deg);
+  }
+}
+

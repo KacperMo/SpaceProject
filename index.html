@@ -1,66 +1,139 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>KacperMo</title>
+    <title>KacperMo</title>
     <meta charset="UTF-8">
     <meta name="description" content="Something funny">
     <meta name="keywords" content="o lo lo lo">
     <meta name="author" content="KacperMo">
     <link rel="stylesheet" type="text/css" href="style.css">
+
 </head>
+
 <body>
     <section id="header">
-        <img id="headerBG"src="grafika/headerSpace.png">
-        <center><img id="erth"src="grafika/erth.png"></center>
-        
-    </section>
-<h1>Hello World</h1>
-    
-    
-    <section class="project">
-        <section class="planets">
-            <img src="grafika/sun.png" height="200px">
-            </section>
-        <section class="aboutProject" style="width:70%;">
-        <header><h3>Projekt Space </h3></header>
-        <article>Projekt najnowszy w trakcie budowy bsdifksdjhflksdhflksdjfglsdkjfgb
-            <details>Made by KacoM</details>
-            </article>
+
+        <center><img id="erth" src="grafika/erth.png"></center>
+        <section id="spaceman" >
+            <img src="grafika/spaceman.gif" style="width: 50%;" id="rocketman">
         </section>
+
+    </section>
+    <center>
+        <h1>Hello World</h1>
+    </center>
+
+    <section id="projectContainer">
+        <section class="project">
+            <section class="planetsL">
+                <img src="grafika/planet1a.png" height="400px">
+            </section>
+            <section class="aboutProject" style="width:70%;">
+                <header>
+                    <h3>Projekt Space </h3>
+                </header>
+                <article>Projekt najnowszy w trakcie budowy bsdifksdjhflksdhflksdjfglsdkjfgb
+                    <details>Made by KacoM</details>
+                </article>
+            </section>
+
+        </section>
+
+
+        <section class="project">
+
+            <section class="aboutProject">
+                <header>
+                    <h3>Projekt Space </h3>
+                </header>
+                <article>Projekt najnowszy w trakcie budowy bsdifksdjhflksdhflksdjfglsdkjfgb</article>
+            </section>
+            <section class="planetsR">
+                <img src="grafika/planet2.png" height="200px">
+            </section>
+        </section>
+
+
+        <section class="project">
+            <section class="planets">
+                <img src="grafika/planet3.png" height="200px">
+            </section>
+            <section class="aboutProject">
+                <header>
+                    <h3>Projekt Space </h3>
+                </header>
+                <article>Projekt najnowszy w trakcie budowy bsdifksdjhflksdhflksdjfglsdkjfgb</article>
+            </section>
+        </section>
+
+        <section class="project">
+
+            <section class="aboutProject">
+                <header>
+                    <h3>Projekt Space </h3>
+                </header>
+                <article>Projekt najnowszy w trakcie budowy bsdifksdjhflksfdsdksdhfdsdfsfdsdksdjfglsdkjfgb</article>
+            </section>
+            <section class="planetsR pulse">
+                <img src="grafika/sun.png" height="200px">
+            </section>
+        </section>
+    </section>
+
+    <script>
+        var element = document.getElementById("rocketman");
+        var lastScroll = 0;
+        window.onscroll = function() {
+            let currentScroll = document.documentElement.scrollTop || document.body.scrollTop; 
             
-    </section>
-    
-    
-   <section class="project">
-        <section class="planets">
-            <img src="grafika/sun.png" height="200px">
-            </section>
-        <section class="aboutProject">
-        <header><h3>Projekt Space </h3></header>
-        <article>Projekt najnowszy w trakcie budowy bsdifksdjhflksdhflksdjfglsdkjfgb</article>
-        </section>
-    </section>
-    
-    
-    <section class="project">
-        <section class="planets">
-            <img src="grafika/sun.png" height="200px">
-            </section>
-        <section class="aboutProject">
-        <header><h3>Projekt Space </h3></header>
-        <article>Projekt najnowszy w trakcie budowy bsdifksdjhflksdhflksdjfglsdkjfgb</article>
-        </section>
-    </section>
-    
-    <section class="project">
-        <section class="planets">
-            <img src="grafika/sun.png" height="200px">
-            </section>
-        <section class="aboutProject">
-        <header><h3>Projekt Space </h3></header>
-        <article>Projekt najnowszy w trakcie budowy bsdifksdjhflksdhflksdjfglsdkjfgb</article>
-        </section>
-    </section>
-    
+            if (currentScroll > 0 && lastScroll <= currentScroll) {
+                lastScroll = currentScroll;
+                element.className=('moveDown');
+                //console.log("Scrolling DOWN");
+            } else {
+                lastScroll = currentScroll;
+                element.className=('moveUp');
+                //console.log("Scrolling UP");
+            }
+        };
+
+    </script>
+    <!--  <script>
+ 
+    var url = "json.txt";
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    var myObj = JSON.parse(this.responseText);
+    document.getElementById("demo").innerHTML = myObj.name;
+  }
+}
+        
+    xmlhttp.open("GET", url, true);
+    xmlhttp.send();
+
+    function myFunction(arr) 
+    {
+          var out = "";
+          var brandprint="";
+          var i;
+          for(i = 0; i < arr.length; i++)
+          {          
+                out += ' <section class="item"><section class="img"><img src="'
+                            +arr[i].image+'"></section><h2>'
+                            +arr[i].brand+'</br>'
+                            +arr[i].name+'</h2><section class="model">'
+                            +arr[i].description+'</section></section>'
+
+                brandprint += '<section class="brand">'
+                            +arr[i].brand+'</section><section id="separator"></section>';
+          }
+
+          document.getElementById("allProjects").innerHTML = out;
+         // document.getElementById("leftpanel").innerHTML = brandprint;
+    }
+    </script>-->
 </body>
+
 </html>
